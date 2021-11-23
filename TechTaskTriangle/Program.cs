@@ -9,9 +9,9 @@ namespace TechTaskTriangle
     class Program
     {
         // Accuracy for the floating point comparisons.
-        static double Delta = 1E-6;
+        static readonly double Delta = 1E-6;
 
-        static void Main(string[] args)
+        static void Main()
         {
             try
             {
@@ -41,11 +41,11 @@ namespace TechTaskTriangle
 
                     // Truncated perimeter is needed to avoid loss of accuracy
                     // E.g. when perimeter equals 11,999999 the number 12 must be written on console.
-                    int truncatedPerimeter = (int)(perimeter + Delta);
+                    long truncatedPerimeter = (long)(perimeter + Delta);
 
                     // Outputting even numbers in a range
                     Console.WriteLine("Even numbers in a range from 0 to triangle perimeter:");
-                    for (int i = 0; i <= truncatedPerimeter; i += 2)
+                    for (long i = 0; i <= truncatedPerimeter; i += 2)
                     {
                         Console.WriteLine(i);
                     }
@@ -103,14 +103,14 @@ namespace TechTaskTriangle
         class Triangle
         {
             // Verices that from the triangle.
-            private Vertex VertexA;
-            private Vertex VertexB;
-            private Vertex VertexC;
+            private readonly Vertex VertexA;
+            private readonly Vertex VertexB;
+            private readonly Vertex VertexC;
 
             // Lengths of the triangle sides
-            private double AC;
-            private double AB;
-            private double BC;
+            private readonly double AC;
+            private readonly double AB;
+            private readonly double BC;
 
             // Constructs an instance odf the Triangle for tree given verteces.
             public Triangle(Vertex vertexA, Vertex vertexB, Vertex vertexC)
