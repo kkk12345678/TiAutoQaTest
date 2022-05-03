@@ -35,6 +35,7 @@ namespace TechTaskTriangle
                     Console.WriteLine();
 
                     // Outputting the perimeter of the triangle
+//';km[;klm[
                     double perimeter = triangle.GetPerimeter();
                     Console.WriteLine("Perimeter: {0:N6}", perimeter);
                     Console.WriteLine();
